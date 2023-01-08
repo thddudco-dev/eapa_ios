@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Cure" representedClassName="Cure" syncable="YES" codeGenerationType="class">
+        <attribute name="cureName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="History" representedClassName="History" syncable="YES" codeGenerationType="class">
+        <attribute name="createDate" attributeType="Date" defaultDateTimeInterval="694665960" usesScalarValueType="NO"/>
+        <attribute name="cureDate" attributeType="Date" defaultDateTimeInterval="694666020" usesScalarValueType="NO"/>
+        <attribute name="cureDesc" attributeType="String" defaultValueString=""/>
+        <attribute name="cureDescEtc" optional="YES" attributeType="String"/>
+        <attribute name="hospitalName" attributeType="String" defaultValueString=""/>
+        <attribute name="id" attributeType="UUID" defaultValueString="0CF044A3-333C-4B22-8FEB-F68B004B6C96" usesScalarValueType="NO"/>
+        <attribute name="memo" optional="YES" attributeType="String"/>
+        <attribute name="nextCureDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="prescription" optional="YES" attributeType="Binary"/>
+        <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="NO"/>
+        <attribute name="teethNums" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[Int]"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="histories" inverseEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="birthDay" attributeType="Date" defaultDateTimeInterval="694666080" usesScalarValueType="NO"/>
+        <attribute name="createDate" attributeType="Date" defaultDateTimeInterval="694666080" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" defaultValueString="0CF044A3-333C-4B22-8FEB-F68B004B6C96" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="isAdult" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isRepresentative" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="updateDate" attributeType="Date" defaultDateTimeInterval="694666260" usesScalarValueType="NO"/>
+        <relationship name="histories" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="History" inverseName="user" inverseEntity="History"/>
+    </entity>
+</model>
